@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Market Basket Analysis</title>
+</head>
+<body>
+    <h1>Market Basket Analysis - Association Rules</h1>
+    <table>
+        <tr>
+            <th>Antecedents</th>
+            <th>Consequents</th>
+            <th>Support</th>
+            <th>Confidence</th>
+            <th>Lift</th>
+        </tr>
+        {% for rule in rules.itertuples() %}
+            <tr>
+                <td>{{ rule.antecedents }}</td>
+                <td>{{ rule.consequents }}</td>
+                <td>{{ rule.support }}</td>
+                <td>{{ rule.confidence }}</td>
+                <td>{{ rule.lift }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
